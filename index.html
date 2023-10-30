@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SIMPHASE - MEP AND BIM IMPLEMENTATIONS</title>
+    <link rel="stylesheet" href="/styles/styles.css" />   
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> 
+    <script>
+        $(document).ready((e) => {
+            $("#header-wrapper").load("/components/header.html");
+        });
+    </script>
+</head>
+<body>
+    <header id="header-wrapper">       
+    </header>
+    <main>
+    <div class="page-start">
+        <div class="page-logo">
+            <img src="/images/simphase-transparentbg-white.png" alt="Simphase Logo" />
+        </div>
+        <video width="auto" height="100vh" autoplay muted loop id="background-vid">
+            <source src="/videos/simphase1.mp4" type="video/mp4">
+            <!-- replacement image to display in case video can't load -->
+            <img src="/images/simphase1.jpeg" alt="Simphase Background Video">
+        </video>
+    </div>  
+    </main> 
+</body>
+</html>

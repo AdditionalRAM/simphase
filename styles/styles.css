@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+.page-start {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: block;
+}
+.page-start #background-vid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.page-start .page-logo {
+  position: absolute;
+  width: max(35vw, 30vh);
+  background-color: transparent;
+  top: 45%;
+  left: 15%;
+}
+.page-start .page-logo img {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+}
+
+#header {
+  position: fixed;
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 500ms ease-in-out;
+  background-color: rgba(32, 32, 32, 0.25);
+  z-index: 2;
+}
+#header #left-header {
+  display: flex;
+  align-items: center;
+  width: 25%;
+  height: 100%;
+}
+#header #left-header img {
+  height: 70%;
+  padding: 0 2vw;
+}
+#header #navbar {
+  width: 50%;
+  height: 100%;
+}
+#header #navbar ul {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  font-family: "Krona One", sans-serif;
+  margin: 0;
+  padding: 0;
+  flex-grow: 3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+#header #navbar ul li {
+  padding: 0 1vw;
+  cursor: pointer;
+}
+#header #navbar ul li a {
+  transition: all 200ms ease-in-out;
+  text-decoration: none;
+  color: #c4c4c4;
+  font-size: 12px;
+}
+#header #navbar ul li a:hover {
+  color: #fff;
+}
+#header #right-header {
+  margin-right: 0;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: right;
+  justify-content: flex-end;
+}
+#header #right-header #language {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  margin: 0 2vw;
+}
+#header #right-header #mobile-navmenu-toggle {
+  display: none;
+}
+
+#mobile-navmenu {
+  position: fixed;
+  width: 100%;
+  top: 8vh;
+  height: 92vh;
+  transition: all 500ms ease-in-out;
+  background-color: rgba(32, 32, 32, 0.81);
+  z-index: 1;
+}
+#mobile-navmenu ul {
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  margin-right: 5vw;
+  font-family: "Krona One", sans-serif;
+  list-style: none;
+}
+#mobile-navmenu ul li {
+  padding: 3vh 2vh;
+  width: fit-content;
+  margin-left: auto;
+  cursor: pointer;
+}
+#mobile-navmenu ul li a {
+  transition: all 200ms ease-in-out;
+  text-decoration: none;
+  color: #000000;
+  font-size: 12px;
+}
+
+.a-underline {
+  width: 0;
+  height: 2px;
+  transition: all 400ms ease-in-out;
+}
+
+.a-underline.show {
+  width: 100%;
+  background-color: rgb(25, 181, 254);
+}
+
+.navmenu-hidden {
+  display: none;
+  background-color: transparent;
+  transition: all 500ms ease-in-out;
+}
+
+@media only screen and (max-width: 1000px) {
+  .page-start .page-logo {
+    left: 5%;
+  }
+  #header #navbar {
+    display: none;
+  }
+  #header #right-header #mobile-navmenu-toggle {
+    display: block;
+    cursor: pointer;
+    margin-right: 2vw;
+  }
+  #header #right-header #mobile-navmenu-toggle img {
+    width: 100%;
+    height: auto;
+  }
+}/*# sourceMappingURL=styles.css.map */
