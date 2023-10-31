@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SIMPHASE - MEP AND BIM IMPLEMENTATIONS</title>
     <link rel="stylesheet" href="/styles/styles.css" />   
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" /> -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> 
+    <script src="https://kit.fontawesome.com/7786a9f9ae.js" crossorigin="anonymous"></script>
     <script>
         $(document).ready((e) => {
             $("#header-wrapper").load("/components/header.html");
+            $("#footer-wrapper").load("/components/footer.html");
         });
     </script>
 </head>
@@ -28,5 +30,6 @@
         </video>
     </div>  
     </main> 
+    <footer id="footer-wrapper"></footer>
 </body>
 </html>

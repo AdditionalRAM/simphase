@@ -58,6 +58,7 @@ $(".navmenu li").on("mouseleave", (e) => {
 })
 
 manageHeaderMenus("#lets-scrum-header", "#lets-scrum-menu", "lets-scrum");
+manageHeaderMenus("#about-us-header", "#about-us-menu", "about-us");
 
 function manageHeaderMenus(hoverID, menuID, menuListItem){
     let headerElement = $(hoverID);

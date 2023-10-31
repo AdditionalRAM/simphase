@@ -53,6 +53,7 @@ body {
     #navbar{
         width: 50%;
         height: 100%;
+        color: #c4c4c4;
         ul{
             list-style: none;
             width: 100%;
@@ -115,9 +116,15 @@ body {
     height: 92vh;
     background-color: rgba(32, 32, 32, 0.81);
     text-align: right;
+    visibility: visible;
     li{
         margin-left: auto;
         padding: 3vh 2vh;
+    }
+    li.mobile-navbar-small{
+        padding: 1vh 2vh;
+        font-size: 0.8em;
+        color: #979797 !important;
     }
 }
 
@@ -134,7 +141,7 @@ body {
 
 .navmenu{
     opacity: 100%;
-    transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
     position: fixed;
     z-index: 1;
     text-align: left;
@@ -169,6 +176,72 @@ body {
 
 .navmenu-mobile-hidden{
     opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+#footer{
+    .footer-content{
+        background-color: white;
+        color: #000;
+        height: 40vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: top;
+        padding: 7vh 0;
+        ul {
+            --icon-size: .8em;
+            --gutter: 1em;
+            padding: 0 0 0 var(--icon-size);
+            li {
+                padding: 0.5vh;
+                padding-left: var(--gutter);
+                a{
+                    text-decoration: none;
+                    color: #151515;
+                    font-size: 0.8em;
+                    font-weight: 500;
+                    transition: color 0.3s ease;
+                    &:hover{
+                        color: #0693e3;
+                    }
+                }
+                &::marker{
+                    content: "\f054"; /* FontAwesome Unicode chevron-right */
+                    font-family: FontAwesome;
+                    font-size: var(--icon-size);
+                }
+            }        
+        }
+        .about-us,.navigation{
+            .title{
+                font-size: 0.9em;
+                font-weight: 600;
+                margin-bottom: 1vh;
+            }
+        }
+        .imprint{
+            a{
+                padding: none;
+            }
+            img{
+                width: 16vw;
+            }
+            .map-logo::marker{
+                content: "\f3c5";
+            }
+            .mail-logo::marker{
+                content: "\f0e0";
+            }
+        }
+    }
+    .footer-bottom{
+        background-color: rgb(15, 15, 15);
+        color: #fff;
+        text-align: center;
+        padding: 2vh 0;
+        font-size: 0.8em;
+    }
 }
 
 .symbolbutton{
@@ -196,10 +269,9 @@ body {
                 display: block;
                 cursor: pointer;
                 margin-right: 2vw;
-                img{
-                    width: 100%;
-                    height: auto;
-                }
+                color: #fff;
+                width: 8vh;
+                font-size: 1.5em;
             }
         }
     }
