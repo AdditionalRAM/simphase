@@ -181,14 +181,23 @@ body {
 
 #footer{
     .footer-content{
-        background-color: white;
-        color: #000;
-        height: 40vh;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-items: top;
+        flex-wrap: wrap;
+        background-color: white;
+        color: #000;
+        height: 40vh;
         padding: 7vh 0;
+        .decorative-image{
+            img{
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                object-fit: cover;
+            }
+        }
         ul {
             --icon-size: .8em;
             --gutter: 1em;
@@ -221,8 +230,27 @@ body {
             }
         }
         .imprint{
+            li{
+                padding: 1em;
+            }
+            .social-media{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
             a{
-                padding: none;
+                padding: 0;
+            }
+            .sm-icon{
+                i{
+                    font-size: 2em;
+                    text-decoration: none;
+                    color: #151515;
+                    transition: color 0.3s ease;
+                    &:hover{
+                        color: #0693e3;
+                    }
+                }
             }
             img{
                 width: 16vw;
@@ -233,14 +261,16 @@ body {
             .mail-logo::marker{
                 content: "\f0e0";
             }
+            
         }
     }
     .footer-bottom{
         background-color: rgb(15, 15, 15);
-        color: #fff;
+        color: #7a7a7a;
         text-align: center;
         padding: 2vh 0;
         font-size: 0.8em;
+
     }
 }
 
@@ -272,6 +302,49 @@ body {
                 color: #fff;
                 width: 8vh;
                 font-size: 1.5em;
+            }
+        }
+    }
+    #footer{
+        .footer-content{
+            flex-direction: column;
+            height: auto;
+            ul{
+                width: 50%;
+                margin: 0 auto;
+                padding-left:0;
+                text-align: center;
+                li{
+                    padding: 2vh;
+                    font-size: 1em;
+                }
+            }
+            .decorative-image{
+                display: none;
+            }
+            .title{
+                text-align: center;
+                display: block;
+                font-size: 1.4em;
+            }
+            .imprint{
+                margin-top: 3vh;
+                .logowrapper{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .logo{
+                        width: 90vw;
+                        margin: 0 auto;
+                    }
+                }          
+                ul{
+                    width: 70vw;
+                }
+                .social-media{
+                    margin-top: 2vh;
+                    justify-content: space-around;
+                }
             }
         }
     }

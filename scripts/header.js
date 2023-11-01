@@ -64,16 +64,17 @@ function manageHeaderMenus(hoverID, menuID, menuListItem){
     let headerElement = $(hoverID);
     let menuElement = $(menuID);
 
-    let functionOnResize = () => {
+    function functionOnResize() {
         let paddingLeft = parseFloat(menuElement.find("li").css("padding-left").replace('px', ''));
         let headerLeft = parseFloat(headerElement.offset().left);
+        let headerTop = parseFloat(headerElement.offset().top) - $(window).scrollTop(); // Add the scroll position
         menuElement.css("left", headerLeft - paddingLeft + "px");
-        menuElement.css("top", header.offset().top + header.outerHeight() + "px");
-        
+        menuElement.css("top", headerTop + headerElement.outerHeight() + "px");
     }
     functionOnResize();
     // $(window).on("resize", functionOnResize);
     headerElement.on('transitionend', functionOnResize);
+    $(window).on("scroll", functionOnResize);
     
 
     let mouseOnMenu = false;
