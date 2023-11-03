@@ -21,10 +21,14 @@ function setMenuList(item, value){
 
 function checkHeaderCSS(){
     if (!anyMenuToggled() && !headerHovering) {
-        header.css("background-color", "rgba(32, 32, 32, 0.25)");
+        header.css("background-color", "rgba(32, 32, 32, 0.35)");
     }
     else{
         header.css("background-color", "rgba(32, 32, 32, 0.81)");
+    }
+    // if screen is scrolled down more than 100vh, header should be opaque
+    if ($(window).scrollTop() > $(window).height()) {
+        header.css("background-color", "rgba(32, 32, 32, 0.95)");
     }
 }
 
@@ -65,6 +69,7 @@ function manageHeaderMenus(hoverID, menuID, menuListItem){
     let menuElement = $(menuID);
 
     function functionOnResize() {
+        checkHeaderCSS();
         let paddingLeft = parseFloat(menuElement.find("li").css("padding-left").replace('px', ''));
         let headerLeft = parseFloat(headerElement.offset().left);
         let headerTop = parseFloat(headerElement.offset().top) - $(window).scrollTop(); // Add the scroll position

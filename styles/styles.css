@@ -12,6 +12,10 @@ body {
   height: 2px;
 }
 
+.whitespace {
+  height: 40vh;
+}
+
 .hidden {
   display: none;
 }
@@ -103,6 +107,7 @@ h1, h2, h3, h4 {
   width: 660px;
   height: 371px;
   background-color: #999;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.4);
 }
 .video-info-box .video-box .yt-vid-holder img {
   width: 100%;
@@ -125,6 +130,7 @@ h1, h2, h3, h4 {
 }
 .video-info-box .video-box .yt-vid-holder .play-button i {
   font-size: 4vh;
+  transform: translateX(10%);
 }
 .video-info-box .video-box .yt-vid-holder .play-button:hover {
   background-color: #E0E0E0;
@@ -143,7 +149,7 @@ h1, h2, h3, h4 {
   justify-content: space-between;
   align-items: center;
   transition: all 500ms ease-in-out;
-  background-color: rgba(32, 32, 32, 0.25);
+  background-color: rgba(32, 32, 32, 0.35);
   z-index: 2;
 }
 #header #left-header {
