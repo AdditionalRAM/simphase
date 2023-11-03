@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BIM - SIMPHASE</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> 
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/7786a9f9ae.js" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready((e) => {
+            $("#header-wrapper").load("/components/header.html");
+            $("#footer-wrapper").load("/components/footer.html");
+        });
+    </script>
+</head>
+<body>
+    <header id="header-wrapper">       
+    </header>
+    <main>
+    <div class="page-start">
+        <div class="page-logo">
+            <h1>MEP</h1>
+            <h2>Fast and Verified MEP Engineering</h2>
+        </div>
+        <video width="auto" height="100vh" autoplay muted loop id="background-vid">
+            <source src="/videos/simphase-mep.mp4" type="video/mp4">
+            <!-- replacement image to display in case video can't load -->
+        </video>
+    </div>  
+    <div class="heading-holder">
+        <h2 class="scroll-effect">40% of energy consumption is attributed to <br /> MEP in office buildings</h2>
+        <div class="divider scroll-effect"></div>
+        <p class="scroll-effect">Let's work together on energy-efficient solutions</p>
+    </div>
+    <div class="video-info-box">
+        <div class="info-box">
+            <p class="big scroll-effect">Building design 1$,
+                construction of the building 20$, operation of the building 60$</p>
+            <p class="small scroll-effect">BIM, BAM, BOOM</p>
+        </div>
+        <div class="video-box">
+            <span class="scroll-effect">1/3</span>
+            <div class="yt-vid-holder hide-video scroll-effect">
+                <img src="/images/mepresim-750x453.png" alt="Bim, Bam, Boom Graph" />
+                <button class="play-button"><i class="fa-solid fa-play"></i></button>
+                <iframe class="yt-vid hidden" width="660" height="371" src="https://www.youtube.com/embed/xO6d1StFC5o" title="The Future of the Building Industry BIM, BAM, BOOM!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>       
+        </div>
+    </div>
+    <div class="video-info-box">
+        <div class="video-box">
+            <span class="scroll-effect">2/3</span>
+            <div class="yt-vid-holder hide-video scroll-effect">
+                <img src="/images/mep-piping.jpg" alt="Autodesk Revit Screenshot" />
+                <button class="play-button"><i class="fa-solid fa-play"></i></button>
+                <iframe class="yt-vid hidden" width="660" height="371" src="https://www.youtube.com/embed/FThDGmWKtqY" title="Sound level calculation in Revit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>        
+        </div>
+        <div class="info-box">
+            <p class="big scroll-effect">If we cannot simulate it, we cannot optimise it</p>
+            <p class="small scroll-effect">The BIM Engineering Software</p>
+        </div>
+    </div>
+    <div class="video-info-box">
+        <div class="info-box">
+            <p class="big scroll-effect">Experience with heat pumps</p>
+            <p class="small scroll-effect">The future lies in renewable energies</p>
+        </div>
+        <div class="video-box">
+            <span class="scroll-effect">3/3</span>
+            <div class="yt-vid-holder hide-video scroll-effect">
+                <img src="/images/efficiency-after-year.jpg" alt="Video Thumbnail: Efficiency of renewable energies" />
+                <button class="play-button"><i class="fa-solid fa-play"></i></button>
+                <iframe class="yt-vid hidden" width="660" height="371" src="https://www.youtube.com/embed/DffoCCuD1fM" title="Wärmepumpe im Fachwerkhaus von Baujahr 1889" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>      
+        </div>
+    </div>
+    <div class="whitespace"></div>
+    </main> 
+    <script>
+        $(".play-button").click((e) => {
+            $(e.target).parent().find(".yt-vid").removeClass("hidden");
+            $(e.target).addClass("hidden");
+            $(e.target).parent().find("img").addClass("hidden");
+        });
+    </script>
+    <script src="/scripts/scroll-effect.js"></script>
+    <footer id="footer-wrapper"></footer>
+</body>
+</html>
