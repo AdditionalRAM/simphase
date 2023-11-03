@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BIM - SIMPHASE</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> 
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/7786a9f9ae.js" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready((e) => {
+            $("#header-wrapper").load("/components/header.html");
+            $("#footer-wrapper").load("/components/footer.html");
+        });
+    </script>
+</head>
+<body>
+    <header id="header-wrapper">       
+    </header>
+    <main>
+    <div class="page-start">
+        <div class="page-logo">
+            <h1>BIM</h1>
+            <h2>Creating a sustainable world through internal planning</h2>
+        </div>
+        <video width="auto" height="100vh" autoplay muted loop id="background-vid">
+            <source src="/videos/simphase-bim.mp4" type="video/mp4">
+            <!-- replacement image to display in case video can't load -->
+        </video>
+    </div>  
+    <div class="heading-holder">
+        <h2>We speak the same language: <br /> openBIM</h2>
+        <div class="divider"></div>
+        <p>Based on common BIM standards that are compatible with each other</p>
+    </div>
+    <div class="video-info-box">
+        <div class="info-box">
+            <p class="big">The new strategy: Suiting clients' needs</p>
+            <p class="small">The MacLeamy Curve</p>
+        </div>
+        <div class="video-box">
+            <div class="yt-vid-holder">
+                <img src="/images/macleamy-curve.png" alt="The MacLeamy Curve" />
+                <button class="play-button"><i class="fa-solid fa-play"></i></button>
+                <iframe class="yt-vid hidden" width="660" height="371" src="https://www.youtube.com/embed/oHHY7CxI2_Y" title="The Future of the Building Industry  The Effort Curve" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>       
+        </div>
+    </div>
+    <div class="video-info-box">
+        <div class="video-box">
+            <div class="yt-vid-holder">
+                <img src="/images/macleamy-curve.png" alt="The MacLeamy Curve" />
+                <button class="play-button"><i class="fa-solid fa-play"></i></button>
+                <iframe class="yt-vid hidden" width="660" height="371" src="https://www.youtube.com/embed/o12aKdw2rJM" title="4D BIM Construction Schedule Animation | 5D Cost Simulation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>        
+        </div>
+        <div class="info-box">
+            <p class="big">Construction sequencing and cost estimation</p>
+            <p class="small">4D and 5D Example</p>
+        </div>
+    </div>
+    <div class="video-info-box">
+        <div class="info-box">
+            <p class="big">Collaborate Pro</p>
+            <p class="small">Understanding the Power of Collaboration</p>
+        </div>
+        <div class="video-box">
+            <div class="yt-vid-holder">
+                <img src="/images/macleamy-curve.png" alt="The MacLeamy Curve" />
+                <button class="play-button"><i class="fa-solid fa-play"></i></button>
+                <iframe class="yt-vid hidden" width="660" height="371" src="https://www.youtube.com/embed/FVlfFrlfTS0" title="Autodesk Collaborate Pro Overview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>      
+        </div>
+    </div>
+    </main> 
+    <script>
+        $(".play-button").click((e) => {
+            $(e.target).parent().find(".yt-vid").removeClass("hidden");
+            $(e.target).addClass("hidden");
+            $(e.target).parent().find("img").addClass("hidden");
+        });
+    </script>
+    <footer id="footer-wrapper"></footer>
+</body>
+</html>

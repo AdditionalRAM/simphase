@@ -1,4 +1,5 @@
 <div id="footer">
+    <button id="back-to-top"><i class="fa-solid fa-angles-up"></i></button>
     <div class="footer-content">
         <div class="navigation">
             <span class="title">NAVIGATION</span>
@@ -52,3 +53,8 @@
         <span class="copyright">ALL RIGHTS RESERVED © 2000 - 2023 SIMPASE</span>
     </div>
 </div>
+<script>
+    $('#back-to-top').click(() => {
+        $('html, body').animate({ scrollTop: 0 }, 1000, "easeOutExpo");
+      });
+</script>
