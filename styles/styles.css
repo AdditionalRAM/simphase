@@ -140,6 +140,14 @@ h1, h2, h3, h4 {
   background-color: #E0E0E0;
   transform: scale(0.9) translate(-55%, -55%);
 }
+.video-info-box .video-box .yt-vid-holder.hide-video::before {
+  content: "";
+  position: absolute;
+  width: 660px;
+  height: 371px;
+  background-color: rgb(0, 0, 0);
+  z-index: 2;
+}
 
 #header {
   position: fixed;
@@ -150,7 +158,7 @@ h1, h2, h3, h4 {
   align-items: center;
   transition: all 500ms ease-in-out;
   background-color: rgba(32, 32, 32, 0.35);
-  z-index: 2;
+  z-index: 5;
 }
 #header #left-header {
   display: flex;
@@ -226,6 +234,7 @@ h1, h2, h3, h4 {
   background-color: rgba(32, 32, 32, 0.81);
   text-align: right;
   visibility: visible;
+  z-index: 5;
 }
 #mobile-navmenu li {
   margin-left: auto;
@@ -252,7 +261,7 @@ h1, h2, h3, h4 {
   opacity: 100%;
   transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
   position: fixed;
-  z-index: 1;
+  z-index: 4;
   text-align: left;
   background-color: rgba(32, 32, 32, 0.75);
   visibility: visible;
@@ -410,6 +419,31 @@ h1, h2, h3, h4 {
   color: #fff;
 }
 
+.scroll-effect {
+  opacity: 0;
+  transform: translateY(20%);
+  transition: all 500ms ease-in-out;
+}
+
+.yt-vid-holder.scroll-effect {
+  transform: scaleX(0);
+  transition: all 500ms cubic-bezier(0.175, 0.585, 0.32, 1.275);
+}
+
+.yt-vid-holder.show {
+  transform: scaleX(1) !important;
+}
+
+.yt-vid-holder.unhide-video::before {
+  transform: scaleX(0);
+  transition: all 500ms cubic-bezier(0.175, 0.585, 0.32, 1.275);
+}
+
+.show {
+  opacity: 100%;
+  transform: translateY(0%);
+}
+
 @media only screen and (max-width: 1000px) {
   .video-info-box {
     flex-direction: column;
@@ -431,17 +465,19 @@ h1, h2, h3, h4 {
   .video-info-box .video-box {
     width: 100%;
     padding: 2vh 0;
+    text-align: center;
   }
   .video-info-box .video-box .yt-vid-holder {
     aspect-ratio: 660/371;
+    margin: 0 auto;
     position: relative;
     width: auto;
-    height: 56.2121212121vw;
+    height: 50.5909090909vw;
     box-sizing: border-box;
   }
   .video-info-box .video-box .yt-vid-holder img {
     aspect-ratio: 660/371;
-    width: 100vw;
+    width: 90vw;
     height: 100% !important;
   }
   .video-info-box .video-box .yt-vid-holder iframe {
@@ -452,6 +488,10 @@ h1, h2, h3, h4 {
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
+  }
+  .video-info-box .video-box .yt-vid-holder.hide-video::before {
+    width: 90vw;
+    height: 50.5909090909vw;
   }
   .page-start .page-logo {
     left: 5%;
