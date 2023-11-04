@@ -3,6 +3,28 @@ let menuList = [];
 const header = $("#header");
 let headerHovering = false;
 
+$("#lets-scrum-menu a, #about-us-menu a").on('click', function (event) {
+    // Check if current element is a child of lets-scrum
+    if ($(this).parents("#lets-scrum-menu").length > 0 && window.location.href.indexOf("lets-scrum") === -1) {
+        return;
+    }
+    // Check if current element is a child of about-us
+    if ($(this).parents("#about-us-menu").length > 0 && window.location.href.indexOf("about-us") === -1) {
+        return;
+    }
+
+    if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+        let targetOffset =  $(hash).offset().top - (0.1 * $(window).height()) // 10vh offset
+        $('html, body').animate({
+            scrollTop: targetOffset
+        }, 800,"easeOutExpo", () => {
+            scrollTop: targetOffset
+        });
+    }
+});
+
 function anyMenuToggled(){
     return menuList.length > 0;
 }
@@ -20,6 +42,13 @@ function setMenuList(item, value){
 }
 
 function checkHeaderCSS(){
+    // check if a #background-vid exists in the page, if not always opaque
+    if($("#background-vid").length === 0){
+        header.css("background-color", "rgba(32, 32, 32, 0.95)");
+        return;
+    }
+
+
     if (!anyMenuToggled() && !headerHovering) {
         header.css("background-color", "rgba(32, 32, 32, 0.35)");
     }
@@ -74,7 +103,7 @@ function manageHeaderMenus(hoverID, menuID, menuListItem){
         let headerLeft = parseFloat(headerElement.offset().left);
         let headerTop = parseFloat(headerElement.offset().top) - $(window).scrollTop(); // Add the scroll position
         menuElement.css("left", headerLeft - paddingLeft + "px");
-        menuElement.css("top", headerTop + headerElement.outerHeight() + "px");
+        menuElement.css("top", /*headerTop + */header.outerHeight() + "px");
     }
     functionOnResize();
     // $(window).on("resize", functionOnResize);

@@ -1,34 +1,44 @@
-// Function to check if an element is in the viewport with an offset
-function isElementInViewport(element, offset) {
-    var rect = element.getBoundingClientRect();
-    return (
-      rect.top >= -offset &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + offset &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-  
-  // Offset value (adjust as needed)
-  var offset = 100; // Example: 100 pixels offset from the top of the viewport
-  
-  // transition all elements with the class "scroll-effect" when they enter the viewport with an offset
-  var scrollEffectElements = $(".scroll-effect");
-  
-  // on window scroll
-  $(window).on("scroll", function () {
-    // for each element with the class "scroll-effect"
-    scrollEffectElements.each(function (index, element) {
-      // if the element is in the viewport with the specified offset
-      if (isElementInViewport(element, offset)) {
-        // add the class "show" to initiate the transition
-        $(element).addClass("show");
-        if($(element).hasClass("yt-vid-holder")){
-            // set time out 600ms $(element).removeClass("hide-video");
-            setTimeout(function(){
-                $(element).addClass("unhide-video");
-            }, 700);
-        }
+// check if any given element is in the viewport, considering offset from the bottom
+function isElementInViewport(el, offset) {
+  const rect = el.getBoundingClientRect();
+  // the top of the element must be in the viewport, we don't care about the bottom
+  return (
+    rect.top >= 0 &&
+    rect.top <=
+      (window.innerHeight || document.documentElement.clientHeight) - offset
+  );
+}
+
+const offset = -100; // 100 pixels offset from the top of the viewport
+
+let scrollEffectElements = undefined;
+let documentReady = false;
+
+// transition all elements with the class "scroll-effect" when they enter the viewport with an offset
+$(document).ready(() => {
+  documentReady = true;
+  scrollEffectElements = $(".scroll-effect");
+  transitionElements();
+});
+
+function transitionElements(){
+  if(!documentReady) return;
+  scrollEffectElements.each((index, element) => {
+    if (isElementInViewport(element, offset)) {
+      $(element).addClass("show");
+      if ($(element).hasClass("yt-vid-holder")) {
+        setTimeout(() => {
+          $(element).addClass("unhide-video");
+        }, 700);
       }
-    });
+    }
   });
+}
+
+// on window scroll
+$(window).on("scroll", () => {
+  transitionElements();
+});
+
+// on document load, transition elements
+
