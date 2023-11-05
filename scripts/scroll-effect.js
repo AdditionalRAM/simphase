@@ -9,7 +9,7 @@ function isElementInViewport(el, offset) {
   );
 }
 
-const offset = -100; // 100 pixels offset from the top of the viewport
+const offset = 100; // 100 pixels offset from the top of the viewport
 
 let scrollEffectElements = undefined;
 let documentReady = false;
