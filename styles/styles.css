@@ -650,19 +650,44 @@ ul.more-v-padding li {
   width: calc(90% / 10);
 }
 
-.staff img {
+.staff {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.staff .staff-info img {
   aspect-ratio: 1/1;
   width: 100%;
   height: auto;
 }
-.staff .staff-name {
+.staff .staff-info .staff-name {
   font-size: 1.1em;
   font-weight: 600;
 }
-.staff .staff-title {
+.staff .staff-info .staff-title {
   font-size: 0.8em;
   font-weight: 500;
-  color: #72B0E1;
+  color: #0693e3;
+}
+.staff .staff-info .staff-description {
+  line-height: 1.3;
+  height: auto;
+}
+.staff .staff-end {
+  margin-top: auto;
+}
+.staff .staff-end .sm-icon {
+  width: fit-content;
+}
+.staff .staff-end .sm-icon i {
+  font-size: 1.5em;
+  text-decoration: none;
+  color: #151515;
+  transition: color 0.3s ease;
+  margin-top: 1vh;
+}
+.staff .staff-end .sm-icon i:hover {
+  color: #0693e3;
 }
 
 .founder-info img {
