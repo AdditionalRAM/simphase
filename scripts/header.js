@@ -43,11 +43,10 @@ function setMenuList(item, value){
 
 function checkHeaderCSS(){
     // check if a #background-vid exists in the page, if not always opaque
-    if($("#background-vid").length === 0){
+    if($("#background-vid").length === 0 && !anyMenuToggled()){
         header.css("background-color", "rgba(32, 32, 32, 0.95)");
         return;
     }
-
 
     if (!anyMenuToggled() && !headerHovering) {
         header.css("background-color", "rgba(32, 32, 32, 0.35)");
@@ -56,7 +55,7 @@ function checkHeaderCSS(){
         header.css("background-color", "rgba(32, 32, 32, 0.81)");
     }
     // if screen is scrolled down more than 100vh, header should be opaque
-    if ($(window).scrollTop() > $(window).height()) {
+    if ($(window).scrollTop() > $(window).height() && !anyMenuToggled()) {
         header.css("background-color", "rgba(32, 32, 32, 0.95)");
     }
 }

@@ -609,7 +609,7 @@ ul.more-v-padding li {
 }
 .largeable-image:hover {
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1.02);
   z-index: 3;
 }
 .largeable-image:active {
@@ -711,12 +711,13 @@ ul.more-v-padding li {
 .loading-bar .loading-bar-child {
   background-color: #0070C9;
   height: 100%;
-  width: var(--my-percentage);
+  width: 10%;
   border-radius: calc(var(--my-height) / 2);
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: flex-end;
+  transition: all 1000ms ease-in-out;
 }
 .loading-bar .loading-bar-child p {
   text-align: right;
@@ -725,6 +726,9 @@ ul.more-v-padding li {
   margin: 0;
   color: #fff;
   font-weight: 600;
+}
+.loading-bar.show .loading-bar-child {
+  width: var(--my-percentage);
 }
 
 .scroll-effect {
@@ -847,6 +851,10 @@ ul.more-v-padding li {
   }
   .page-start .page-logo {
     left: 5%;
+    max-width: 80vw;
+  }
+  .page-start h1 {
+    font-size: 4em !important;
   }
   #header #navbar {
     display: none;
@@ -917,6 +925,14 @@ ul.more-v-padding li {
   }
   .image-gallery .image-holder {
     width: 100%;
+  }
+  .image-gallery.certs {
+    flex-direction: column;
+  }
+  .image-gallery.certs .image-holder {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
   .image-info-box {
     flex-direction: column;
