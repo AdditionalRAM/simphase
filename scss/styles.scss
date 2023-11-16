@@ -452,6 +452,7 @@ ul.more-v-padding{
         height: 40vh;
         padding: 7vh 0;
         .decorative-image{
+            height: 100%;
             img{
                 width: 100%;
                 height: 100%;
@@ -763,6 +764,16 @@ ul.more-v-padding{
     }
 }
 
+.map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    iframe{
+        width: 100%;
+    }
+}
+
 .scroll-effect {
     opacity: 0;
     transform: translateY(20%);
@@ -839,8 +850,10 @@ ul.more-v-padding{
     }
 }
 
+
+
 // mobile devices
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 800px) {
     .video-info-box{
         flex-direction: column;
         .info-box{

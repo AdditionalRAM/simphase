@@ -437,6 +437,9 @@ ul.more-v-padding li {
   height: 40vh;
   padding: 7vh 0;
 }
+#footer .footer-content .decorative-image {
+  height: 100%;
+}
 #footer .footer-content .decorative-image img {
   width: 100%;
   height: 100%;
@@ -731,6 +734,16 @@ ul.more-v-padding li {
   width: var(--my-percentage);
 }
 
+.map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.map iframe {
+  width: 100%;
+}
+
 .scroll-effect {
   opacity: 0;
   transform: translateY(20%);
@@ -800,7 +813,7 @@ ul.more-v-padding li {
   transform: scale(1);
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 800px) {
   .video-info-box {
     flex-direction: column;
   }

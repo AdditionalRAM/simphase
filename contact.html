@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Let's Scrum - SIMPHASE</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> 
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/7786a9f9ae.js" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready((e) => {
+            $("#header-wrapper").load("/components/header.html");
+            $("#footer-wrapper").load("/components/footer.html");
+        });
+    </script>
+</head>
+<body>
+    <header id="header-wrapper">       
+    </header>
+    <div class="larged-image">
+        <button class="close-button"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <main class="long-page">
+    <div class="small-whitespace"></div>
+    <div class="heading-holder" id="lets-scrum">
+        <h1 class="scroll-effect center">CONTACT US</h1>
+        <div class="divider scroll-effect"></div>
+    </div>
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4855.4248743320795!2d13.327812000000002!3d52.520543!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851101662706f%3A0x33931e086528fa92!2sFranklinstra%C3%9Fe%2011%2C%2010587%20Berlin!5e0!3m2!1sde!2sde!4v1699388652078!5m2!1sde!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="whitespace"></div>
+    </main> 
+    <script src="/scripts/scroll-effect.js"></script>
+    <!-- <script src="/scripts/largeable-images.js"></script> -->
+    <footer id="footer-wrapper"></footer>
+</body>
+</html>
